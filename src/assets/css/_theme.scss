@@ -1,0 +1,32 @@
+$box-shadow-drag-drop : var(--boxShadowDragDrop);
+$color-base: var(--colorBase);
+$color-success: var(--colorSuccess);
+$color-error: var(--colorError);
+$color-warning: var(--colorWarning);
+$color-next-step: var(--colorNextStep);
+$color-disable-step: var(--colorDisableStep);
+$color-title: var(--colorTitle);
+$matrix-item-background: #DDDDDD;
+$matrix-item-previous-committee-background: #4a5c60;
+$font-family-bold: NunitoSans-Bold,sans-serif;
+$font-family: NunitoSans,sans-serif;
+$text-color: $color-title;
+$divider-color: var(--colorBorder);
+$coin-color: var(--colorCoin);
+
+
+$coin-color: rgb(221, 162, 0);
+$coin-border-color: rgb(192, 131, 0);
+$coin-front: "~src/assets/clap.png";
+
+:root {
+  --boxShadowDragDrop: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  --colorSuccess: #00b28e;
+  --colorError: #c64840;
+  --colorNextStep: #4a5c60;
+  --colorDisableStep: #b6bdbf;
+  --colorWarning: #ea9b3e;
+  --colorTitle: #4a5c60;
+  --colorBorder: #DADEDF;
+  --colorCoin: #ea9b3e;
+}

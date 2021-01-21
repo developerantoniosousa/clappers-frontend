@@ -1,0 +1,50 @@
+001-influence.svg
+002-speech bubble.svg
+003-interpersonal.svg
+004-stress.svg
+005-listen actively.svg
+006-emotions.svg
+007-confidence.svg
+008-support.svg
+009-asset management.svg
+010-planning.svg
+011-management.svg
+012-empathy.svg
+013-self esteem.svg
+014-ambition.svg
+015-influence.svg
+016-learning.svg
+017-calm.svg
+018-life.svg
+019-confidence.svg
+020-emotions.svg
+021-balance.svg
+022-interpersonal.svg
+023-problem solving.svg
+024-visualization.svg
+025-challenge.svg
+026-development.svg
+027-healthy life.svg
+028-experience.svg
+029-strategy.svg
+030-creativity.svg
+031-planning.svg
+032-save the planet.svg
+033-leadership.svg
+034-creativity.svg
+035-teamwork.svg
+036-opportunity.svg
+037-friendship.svg
+038-wisdom.svg
+039-development.svg
+040-learn.svg
+041-strong.svg
+042-self improvement.svg
+043-tactical.svg
+044-speaking.svg
+045-empathy.svg
+046-development.svg
+047-self awareness.svg
+048-time management.svg
+049-critical thinking.svg
+050-decision making.svg
