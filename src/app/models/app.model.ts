@@ -1,6 +1,13 @@
-type Category = 'disseminate-knowledge' | 'think-out-the-box' | 'communication' |
-                'team-work' | 'resilience' | 'proactivity' |
-                'assertiveness' | 'productivity' | 'commitment';
+type Category =
+  | 'disseminate-knowledge'
+  | 'think-out-the-box'
+  | 'communication'
+  | 'team-work'
+  | 'resilience'
+  | 'proactivity'
+  | 'assertiveness'
+  | 'productivity'
+  | 'commitment';
 
 type EventType = 'clap-received' | 'clap-sent' | 'start-time-cycle' | 'achievement-badge';
 
@@ -37,6 +44,9 @@ export interface ClapEvent {
   content?: string | object;
   type: EventType;
   date: string;
+  _id: string;
+  category_type: Category;
+  level: number;
 }
 
 export interface Dashboard {
@@ -45,8 +55,10 @@ export interface Dashboard {
   badges: Badge[];
 }
 
-export interface Timeline {
+export interface Event {
   content?: ClapReceivedContent | ClapSentContent | AchievementContent;
   available_claps: number;
   badges: Badge[];
+  type: EventType;
+  date: string;
 }

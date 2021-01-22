@@ -11,6 +11,7 @@ import { SendClapsCategoryComponent } from './scenes/send-claps-category/send-cl
 import { SendClapsAmountComponent } from './scenes/send-claps-amount/send-claps-amount.component';
 import { LoginComponent } from './scenes/login/login.component';
 import { AppComponent } from './app.component';
+import { TimelineComponent } from './scenes/timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppComponent } from './app.component';
     SendClapsTeamComponent,
     SendClapsCategoryComponent,
     SendClapsAmountComponent,
-    LoginComponent
+    LoginComponent,
+    TimelineComponent
   ],
   imports: [
     HttpClientModule,

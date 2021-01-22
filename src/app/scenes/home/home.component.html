@@ -11,18 +11,14 @@
   </header>
 
   <div class="badges">
-      <div 
-        *ngFor="let badge of dashboard.badges" 
-        class="badge" 
-        [class.badge__achieved]="badge.level > 0" 
-      >
-        <img src="{{ 'assets/icons/icon-' + badge.category_type + '.svg' }}" class="svg-icon" />
-      </div>
+    <div *ngFor="let badge of dashboard.badges" class="badge" [class.badge__achieved]="badge.level > 0">
+      <img src="{{ 'assets/icons/icon-' + badge.category_type + '.svg' }}" class="svg-icon" />
+    </div>
   </div>
   <div class="send-clap">
     <button class="button-send-claps" (click)="sendClap()">Enviar Claps!</button>
   </div>
   <div class="timeline">
-    <h1>Timeline</h1>
+    <timeline></timeline>
   </div>
 </ng-template>

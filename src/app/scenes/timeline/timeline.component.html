@@ -1,0 +1,16 @@
+<div *ngFor="let event of timeline">
+  <div [ngSwitch]="event.type">
+    <div *ngSwitchCase="'clap-received'">
+      {{ event.content  }}
+    </div>
+    <div *ngSwitchCase="'clap-sent'">
+      {{ event.content }}
+    </div>
+    <div *ngSwitchCase="'start-time-cycle'">
+      {{ event.content }}
+    </div>
+    <div *ngSwitchCase="'achievement-badge'">
+      {{ event.content }}
+    </div>
+  </div>
+</div>
