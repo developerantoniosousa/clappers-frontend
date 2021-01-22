@@ -1,6 +1,28 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px black;
+    margin-bottom: 1em;
+    
+    button {
+        background: 0;
+        border: 0;
+        outline: 0;
+        padding: 1em;
+        font-size: 12pt;
+    }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    border: 0;
+    &__back {
+
+    }
+
+    &__amount {
+        button {
+
+        }
+    }
+
+    &__auth {
+        
+    }
 }

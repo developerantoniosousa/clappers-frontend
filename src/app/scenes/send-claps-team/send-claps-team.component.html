@@ -1,0 +1,22 @@
+    <section class="select-team">
+        <div class="search">
+            <span class="search__title">Quem merece <br />os claps?</span>
+            <input #searchCollaborator type="text" class="search__field" placeholder="digite um nome" />
+        </div>
+        <div *ngIf="isLoading; else users" class="loading">Loading</div>
+        <ng-template #users>
+            <div *ngIf="team.length === 0" class="not-found">Nenhum usuário encontrado</div>
+            <div *ngIf="team.length > 0" class="team">
+                <ul>
+                    <li *ngFor="let collaborator of team">
+                        <button class="team-member" (click)="sendClapToCollaborator(collaborator)">
+                            <img src="{{collaborator.avatar}}" class="team-member__avatar" />
+                            <div class="team-member__name">
+                                {{ collaborator.name }}
+                            </div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </ng-template>
+    </section>

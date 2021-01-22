@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   public sendClap(): void {
-    this.router.navigateByUrl('/send-claps');
+    this.router.navigateByUrl('/send-claps-team');
   };
 
 }

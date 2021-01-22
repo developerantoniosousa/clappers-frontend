@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SendClapsComponent } from './send-claps.component';
+import { SendClapsTeamComponent } from './send-claps-team.component';
 
-describe('SendClapsComponent', () => {
-  let component: SendClapsComponent;
-  let fixture: ComponentFixture<SendClapsComponent>;
+describe('SendClapsTeamComponent', () => {
+  let component: SendClapsTeamComponent;
+  let fixture: ComponentFixture<SendClapsTeamComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SendClapsComponent ]
+      declarations: [ SendClapsTeamComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SendClapsComponent);
+    fixture = TestBed.createComponent(SendClapsTeamComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

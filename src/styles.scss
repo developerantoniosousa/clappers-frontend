@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 body {
-    background: radial-gradient(#fffcdb 0%, rgba(0, 0, 255, 0) 50%, rgb(193 193 193 / 59%) 95%);
+    background-image: radial-gradient(#fffcdb 0%, rgba(0, 0, 255, 0) 50%, rgb(193 193 193 / 59%) 95%);
+    background-position: center;
+    background-attachment: fixed;
 }

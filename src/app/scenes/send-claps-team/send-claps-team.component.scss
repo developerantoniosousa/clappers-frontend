@@ -1,0 +1,62 @@
+.search {
+    padding: 2rem;
+    text-align: center;
+    
+    &__title{
+        display: inline-block;
+        font-size: 28pt;
+        margin-bottom: 2rem;
+        font-family: 'Potta One';
+    }
+
+    &__field{
+        font-size: 20pt;
+        background: transparent;
+        outline: 0;
+        border: 0;
+        border-bottom: solid 2px black;
+        margin-bottom: 3rem;
+    }
+}
+
+.not-found{
+    font-size: 24pt;
+    text-align: center;
+    padding: 2rem;
+}
+
+.team{
+    padding-bottom: 5rem;
+    &-member {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: calc(50px + 2rem);
+        padding-left: 2rem;
+        width: calc(100vw - 4rem);
+        border: 0;
+        outline: 0;
+        background: 0;
+        border-bottom: solid 1px #e3e3e3;
+        background: linear-gradient(0deg, #f9f9f9, #ddd);
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        &__avatar {
+          width: 50px;
+          height: auto;
+          border-radius: 50%;
+          margin-right: 1rem;
+        }
+
+        &__name {
+          font-size: 14pt;
+        }
+    }
+}
+
+.select-category{
+    margin: 2rem 0;
+}

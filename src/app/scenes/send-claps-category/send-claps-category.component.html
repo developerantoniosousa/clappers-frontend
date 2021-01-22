@@ -1,0 +1,16 @@
+<section class="select-category">
+    <div class="clap-receiver">
+        <img src="{{ currentUser?.avatar }}" class="clap-receiver__avatar" />
+    </div>
+    <div class="title">Onde {{ firstName }} se destaca?</div>
+    <div class="category-list">
+        <ul>
+            <li *ngFor="let category of categories">
+                <button class="category" (click)="selectCategory(category.type)">
+                    <img src="{{ 'assets/icons/icon-' + category.type + '.svg' }}" class="category__badge" />
+                    <span class="category__name">{{ category.description }}</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -4,12 +4,6 @@ type Category = 'disseminate-knowledge' | 'think-out-the-box' | 'communication' 
 
 type EventType = 'clap-received' | 'clap-sent' | 'start-time-cycle' | 'achievement-badge';
 
-interface User {
-    _id: string;
-    name: string;
-    avatar?: string;
-}
-
 interface ClapReceivedContent {
   claps: number;
   category_type: Category;
@@ -31,6 +25,12 @@ interface Badge {
     _id: string;
     category_type: Category;
     level: number;
+}
+
+export interface User {
+    _id: string;
+    name: string;
+    avatar?: string;
 }
 
 export interface ClapEvent {

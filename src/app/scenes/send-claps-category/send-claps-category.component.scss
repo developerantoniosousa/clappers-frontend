@@ -1,0 +1,49 @@
+.clap-receiver{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__avatar {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin: 1rem;
+  }
+
+  &__name {
+    font-size: 14pt;
+  }
+}
+
+.title{
+  display: inline-block;
+  font-size: 28pt;
+  margin-bottom: 2rem;
+  font-family: 'Potta One';
+  text-align: center;
+}
+
+.category {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: calc(50px + 2rem);
+  padding-left: 2rem;
+  width: calc(100vw - 4rem);
+  border: 0;
+  outline: 0;
+  background: 0;
+  border-bottom: solid 1px #e3e3e3;
+  background: linear-gradient(0deg, #f9f9f9, #ddd);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-size: 16pt;
+
+  &__badge {
+    width: 32px;
+    height: auto;
+    margin: .5rem;
+  }
+}
