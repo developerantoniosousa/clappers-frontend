@@ -15,6 +15,8 @@ export class StateService {
       {type: "assertiveness", description: "Assertividade" },
       {type: "productivity", description: "Produtividade" },
       {type: "commitment", description: "Comprometimento" },
-    ]
+    ],
+    category: null,
+    clapsToGive: 0
   };
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StateService } from './services/state.service';
 
 @Component({
   selector: 'app-claps-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(  ) {}
+  constructor( public state: StateService) {}
 }
