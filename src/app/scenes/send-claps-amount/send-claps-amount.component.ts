@@ -5,7 +5,7 @@ import { ApiService } from '../../services/api.service';
 import { User } from '../../models/app.model';
 
 @Component({
-  selector: 'send-claps-amount',
+  selector: 'app-send-claps-amount',
   templateUrl: './send-claps-amount.component.html',
   styleUrls: ['./send-claps-amount.component.scss']
 })
@@ -25,7 +25,6 @@ export class SendClapsAmountComponent implements OnInit {
   constructor( private api: ApiService, public state: StateService, private router: Router ) {}
 
   async ngOnInit(): Promise<void> {
-    this.isLoading = true;
     this.currentUser = this.state.data.user;
     this.category = this.state.data.category;
     this.firstName = this.currentUser.name.split(' ')[0];
@@ -34,17 +33,17 @@ export class SendClapsAmountComponent implements OnInit {
   }
 
   public addAmount(amount: number): void {
-    if (this.currentClapsToGive <= 0) return;
-    this.currentClapsToGive = this.currentClapsToGive - amount; 
+    if (this.currentClapsToGive <= 0) { return; }
+    this.currentClapsToGive = this.currentClapsToGive - amount;
     this.state.data.clapsToGive = this.currentClapsToGive;
-    this.clapsGiven = this.clapsGiven + amount; 
+    this.clapsGiven = this.clapsGiven + amount;
     this.currentClapsToGiveGraph = this.calculatePixels(this.currentClapsToGive, this.initialClapsToGive);
     this.clapsGivenGraph = this.calculatePixels(amount, this.clapsGiven, true);
   }
 
   public resetAmount(): void {
-    this.currentClapsToGive = this.initialClapsToGive; 
-    this.clapsGivenGraph = "0px";
+    this.currentClapsToGive = this.initialClapsToGive;
+    this.clapsGivenGraph = '0px';
     this.currentClapsToGiveGraph = this.calculatePixels(this.initialClapsToGive, this.clapsGiven);
     this.state.data.clapsToGive = this.initialClapsToGive;
     this.clapsGiven = 0;
@@ -52,11 +51,34 @@ export class SendClapsAmountComponent implements OnInit {
 
   private calculatePixels(amount: number, prevNumber: number, isGiven?: boolean): string {
     let amountInPixels = amount / prevNumber * 100;
-    if (isGiven) amountInPixels = 100 - amountInPixels;
+    if (isGiven) {
+      amountInPixels = 100 - amountInPixels;
+    }
     return amountInPixels + 'px';
   }
 
-  public goToHome(amountName: string): void {
+  public sendClap(): void {
+    this.isLoading = true;
+
+    const clapPayload = {
+      amount: this.clapsGiven,
+      userId: this.currentUser._id,
+      category: this.category
+    };
+
+    this.isLoading = false;
+    this.success = true;
+
+    // this.api.sendClap(clapPayload).toPromise().then(res => {
+    //   this.isLoading = false;
+    //   this.success = true;
+    // }).catch(e => {
+    //   console.error(e);
+    // });
+
+  }
+
+  public goToHome(): void {
     this.router.navigateByUrl('/home');
   }
 }

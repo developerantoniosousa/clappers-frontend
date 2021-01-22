@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { StateService } from './services/state.service';
+import { Location } from '@angular/common';
+import { Router, NavigationEnd  } from '@angular/router';
 
 @Component({
   selector: 'app-claps-root',
@@ -7,5 +9,20 @@ import { StateService } from './services/state.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor( public state: StateService) {}
+  currentRoute: string;
+  showHeader: boolean;
+
+  constructor( public state: StateService, private location: Location, router: Router) {
+    router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.url;
+        const noShowBarURLs = ['/', '/home'];
+        this.showHeader = !noShowBarURLs.some(match => match === this.currentRoute);
+      }
+    });
+  }
+
+  public goBack(): void {
+    this.location.back();
+  }
 }

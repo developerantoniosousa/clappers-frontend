@@ -1,9 +1,13 @@
+.main {
+  padding-bottom: 5rem;
+}
+
 .main-header {
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px black;
     margin-bottom: 1em;
-    
+
     button {
         background: 0;
         border: 0;
@@ -23,6 +27,7 @@
     }
 
     &__auth {
-        
+
     }
 }
+

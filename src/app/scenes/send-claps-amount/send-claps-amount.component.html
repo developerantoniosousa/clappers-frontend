@@ -25,8 +25,8 @@
         </div>
     </div>
     <div class="send-clap">
-        <button class="button reset-clap" (click)="resetAmount()">reset</button>
-        <button class="button" (click)="sendClap()">CLAP!</button>
+        <button class="button default reset-clap" (click)="resetAmount()">reset</button>
+        <button class="button default" (click)="sendClap()">CLAP!</button>
     </div>
 </section>
 </ng-template>
@@ -36,6 +36,6 @@
         Sucesso!
     </div>
     <div class="button-success">
-        <button class="button send-clap">OK</button>
+        <button class="button default send-clap" (click)="goToHome()">OK</button>
     </div>
 </section>

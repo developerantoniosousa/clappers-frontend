@@ -1,14 +1,14 @@
-<div>
-<nav class="main-header">
+<div class="main">
+<nav *ngIf="showHeader" class="main-header">
     <div class="main-header__back">
-        <button><</button>
+        <button (click)="goBack()"><</button>
     </div>
     <div class="main-header__amount">
         <button>Você ainda tem {{ state.data.clapsToGive }} claps para compartilhar</button>
     </div>
     <div class="main-header__auth">
         <button>
-        
+
         </button>
     </div>
 </nav>

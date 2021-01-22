@@ -75,13 +75,13 @@
         display:flex;
         flex-direction: column;
         justify-content: flex-end;
-        &__current{
+        // &__current{
 
-        }
+        // }
 
-        &__to_send{
+        // &__to_send{
 
-        }
+        // }
     }
 
     .controls {
@@ -103,7 +103,7 @@
             }
         }
     }
-    
+
     .icon-amount {
         width: 100px;
         height: 100px;
@@ -120,24 +120,38 @@
     }
 }
 
+button.default{
+  padding: 1em;
+  background: #ffcb7c;
+  border: solid 1px orange;
+  border-radius: 10px;
+  font-family: 'Potta One';
+  box-shadow: 1px 1px 1px yellow;
+  font-size: 18pt;
+}
+
 .send-clap{
   display: flex;
   justify-content: space-around;
   margin-top: 2rem;
-  button{
-    padding: 1em;
-    background: #ffcb7c;
-    border: solid 1px orange;
-    border-radius: 10px;
-    font-family: 'Potta One';
-    box-shadow: 1px 1px 1px yellow;
-    font-size: 18pt;
 
-
-    &.reset-clap{
-        color: red;
-        border-color: #c0c0c0;
-        background: transparent;
-    }
+  &.reset-clap{
+      color: red;
+      border-color: #c0c0c0;
+      background: transparent;
   }
+}
+
+.success-message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Potta One';
+  font-size: 24pt;
+  height: 50vh;
+}
+
+.button-success{
+  display: flex;
+  justify-content: center;
 }

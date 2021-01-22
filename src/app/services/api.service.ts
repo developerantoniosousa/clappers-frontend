@@ -35,10 +35,10 @@ export class ApiService {
 
   getUsers(query?: string): Observable<any[]> {
     const searchParams = query;
-    let queryString = "";
-    
+    let queryString = '';
+
     if (searchParams) {
-      queryString = `/?q=${query}`
+      queryString = `/?q=${query}`;
     }
 
     return this.http.get<any[]>(
