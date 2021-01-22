@@ -8,7 +8,7 @@
             <div *ngIf="team.length === 0" class="not-found">Nenhum usuário encontrado</div>
             <div *ngIf="team.length > 0" class="team">
                 <ul>
-                    <li *ngFor="let collaborator of team">
+                    <li *ngFor="let collaborator of team.docs">
                         <button class="team-member" (click)="sendClapToCollaborator(collaborator)">
                             <img src="{{collaborator.avatar}}" class="team-member__avatar" />
                             <div class="team-member__name">

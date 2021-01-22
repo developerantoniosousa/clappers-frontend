@@ -8,10 +8,26 @@ html, body {
     margin: 0;
     padding: 0;
     border: 0;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 body {
     background-image: radial-gradient(#fffcdb 0%, rgba(0, 0, 255, 0) 50%, rgb(193 193 193 / 59%) 95%);
     background-position: center;
     background-attachment: fixed;
+}
+
+h1 {
+  color: #0b6c8a;
+  text-align: center;
+  border-top: solid 1px #f6838d;
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.subtext {
+  padding: 1rem 3rem;
+  text-align: center;
+  color: #989898;
 }

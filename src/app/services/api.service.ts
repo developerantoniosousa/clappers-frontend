@@ -38,7 +38,7 @@ export class ApiService {
     let queryString = '';
 
     if (searchParams) {
-      queryString = `/?q=${query}`;
+      queryString = `/?name=${query}`;
     }
 
     return this.http.get<any[]>(

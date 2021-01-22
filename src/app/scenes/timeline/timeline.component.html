@@ -1,0 +1,38 @@
+<h1>Novidades</h1>
+<ul *ngFor="let event of timeline">
+  <li [ngSwitch]="event.type" class="timeline">
+    <div *ngSwitchCase="'clap-received'" class="timeline-item timeline-item__clap-received">
+      <img src="{{ 'assets/icons/icon-' + event.content.category_type + '.svg' }}" class="icon" />
+      <div>
+        <div class="date">{{ event.createdAt | date }}</div>
+        <div class="text">Parabéns! Você recebeu {{ event.content.claps }} claps do time!</div>
+        <div class="qtde">{{ event.content.claps }}</div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'clap-sent'" class="timeline-item timeline-item__clap-sent">
+      <img src="{{ 'assets/icons/icon-' + event.content.category_type + '.svg' }}" class="icon" />
+      <div>
+        <div class="date">{{ event.createdAt | date }}</div>
+        <div class="text">Você enviou {{ event.content.claps }} claps para {{ event.content.target_user.name }} na categoria {{  event.content.category_type | category }}!</div>
+      </div>
+      <div class="qtde">{{ event.content.claps }}</div>
+    </div>
+    <div *ngSwitchCase="'start-time-cycle'" class="timeline-item timeline-item__new-cycle">
+      <img src="{{ 'assets/icons/007-confidence.svg' }}" class="icon" />
+      <div>
+        <div class="date">{{ event.createdAt | date }}</div>
+        <div class="text">Um novo ciclo se iniciou e você recebeu {{ event.content?.claps }} claps para compartilhar com o time! É hora de reconhecer as boas ações!</div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'achievement-badge'" class="timeline-item timeline-item__achievement">
+      <img src="{{ 'assets/icons/icon-' + event.content.category_type + '.svg' }}" class="icon" />
+      <div>
+        <div class="date">{{ event.createdAt | date }}</div>
+        <div class="text">Nova conquista! Agora você está no nível {{ event.content.level }} de {{ event.content.category_type | category }}</div>
+      </div>
+      <div class="achievement">{{ event.content.claps }}</div>
+    </div>
+  </li>
+</ul>
+
+
