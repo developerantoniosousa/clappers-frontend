@@ -7,7 +7,7 @@ import { SendClapsCategoryComponent } from './scenes/send-claps-category/send-cl
 import { SendClapsAmountComponent } from './scenes/send-claps-amount/send-claps-amount.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'send-claps-team', component: SendClapsTeamComponent },

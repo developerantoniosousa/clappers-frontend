@@ -16,6 +16,12 @@ interface ClapReceivedContent {
   category_type: Category;
 }
 
+export interface Recognition {
+    'receiver_id': string;
+    'category_type': string;
+    'claps': number;
+}
+
 interface ClapSentContent {
   claps: number;
   target_user: User;
@@ -35,7 +41,7 @@ interface Badge {
 }
 
 export interface User {
-    _id: string;
+    user: string;
     name: string;
     avatar?: string;
 }

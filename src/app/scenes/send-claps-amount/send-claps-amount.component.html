@@ -1,68 +1,41 @@
-<div *ngIf="isLoading; else users" class="loading">Loading</div>
-
-<ng-template #users>
-    <section class="select-team">
-        <div class="search">
-            <span class="search__title">Quem merece <br />os claps?</span>
-            <input type="text" class="search__field" placeholder="digite um nome" />
+<ng-template #selectAmount>
+<section class="select-amount">
+    <div class="clap-receiver">
+        <div>
+            <img src="{{ currentUser.avatar }}"class="clap-receiver__avatar" />
+            <img src="{{ 'assets/icons/icon-' + category + '.svg' }}" class="clap-receiver__badge" />
         </div>
-        <div class="team">
-            <ul *ngFor="let collaborator of team">
-                <li>
-                    <button class="team-member" (click)="sendClapToCollaborator(collaborator)">
-                        <img src="{{collaborator.avatar}}" class="team-member__avatar" />
-                        <div class="team-member__name">
-                            {{ collaborator.name }}
-                        </div>
-                    </button>
-                </li>
-            </ul>
+    </div>
+    <div class="title">Quanto vale o show?</div>
+    <div class="amount-selected">
+        <div class="amount amount__current">
+            <img src="assets/icons/015-influence.svg" class="icon-amount" />
+            <div class="graph graph__to-give" [style.height]="currentClapsToGiveGraph"></div>
+            <div class="value">{{ currentClapsToGive }}</div>
         </div>
-    </section>
-
-    <section class="select-category">
-        <div class="clap-receiver">
-            <button>
-                <img class="clap-receiver__avatar" />
-                <span class="clap-receiver__name">José da Silva</span>
-            </button>
+        <div class="controls">
+            <button class="select-amount" (click)="addAmount(1)" [disabled]="currentClapsToGive < 1">+1</button>
+            <button class="select-amount" (click)="addAmount(5)" [disabled]="currentClapsToGive < 5">+5</button>
+            <button class="select-amount" (click)="addAmount(10)" [disabled]="currentClapsToGive < 10">+10</button>
         </div>
-        <div class="category-list">
-            <ul>
-                <li class="category">
-                    <img class="category__badge" />
-                    <span class="category__name">ANY</span>
-                </li>
-            </ul>
+        <div class="amount amount__to_send">
+            <img src="assets/icons/017-calm.svg" class="icon-amount" />
+            <div class="graph graph__given" [style.height]="clapsGivenGraph"></div>
+            <div class="value">{{ clapsGiven }}</div>
         </div>
-    </section>
-
-    <section class="select-amount">
-        <div class="clap-receiver">
-            <img class="clap-receiver__avatar" />
-            <span class="clap-receiver__name">José da Silva</span>
-        </div>
-        <div class="amount-selected">
-            <div class="current-amount">1000</div>
-            <div class="controls">
-                <button class="add">+1</button>
-                <button class="add">+5</button>
-                <button class="add">+10</button>
-                <button class="add">Reset</button>
-            </div>
-            <div class="send-amount">85</div>
-        </div>
-        <div class="send-clap">
-            <button class="button send-clap">CLAP!</button>
-        </div>
-    </section>
-
-    <section class="success">
-        <div class="success-message">
-            Sucesso!
-        </div>
-        <div class="button-success">
-            <button class="button send-clap">OK</button>
-        </div>
-    </section>
+    </div>
+    <div class="send-clap">
+        <button class="button default reset-clap" (click)="resetAmount()">reset</button>
+        <button class="button default" (click)="sendClap()">CLAP!</button>
+    </div>
+</section>
 </ng-template>
+
+<section *ngIf="success; else selectAmount" class="success">
+    <div class="success-message">
+        Sucesso!
+    </div>
+    <div class="button-success">
+        <button class="button default send-clap" (click)="goToHome()">OK</button>
+    </div>
+</section>

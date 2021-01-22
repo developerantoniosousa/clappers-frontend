@@ -12,7 +12,7 @@ import { User } from '../../models/app.model';
 export class SendClapsCategoryComponent implements OnInit {
   isLoading: boolean;
   currentUser: User;
-  categories: [];
+  categories: any[];
   firstName: string;
 
   constructor( private api: ApiService, public state: StateService, private router: Router ) {}

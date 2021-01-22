@@ -35,20 +35,20 @@ export class ApiService {
 
   getUsers(query?: string): Observable<any[]> {
     const searchParams = query;
-    let queryString = "";
-    
+    let queryString = '';
+
     if (searchParams) {
-      queryString = `/?q=${query}`
+      queryString = `/?name=${query}`;
     }
 
     return this.http.get<any[]>(
-      `${environment.API_URL}/users${queryString}`
+      `${environment.API_URL}/collaborators${queryString}`
       );
   }
 
   sendClap(clapPayload: object): Observable<void> {
     return this.http.post<void>(
-      `${environment.API_URL}/sendClap`, clapPayload
+      `${environment.API_URL}/recognitions`, clapPayload
       );
   }
 }

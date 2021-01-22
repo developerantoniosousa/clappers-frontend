@@ -12,6 +12,8 @@ import { SendClapsAmountComponent } from './scenes/send-claps-amount/send-claps-
 import { LoginComponent } from './scenes/login/login.component';
 import { AppComponent } from './app.component';
 import { TimelineComponent } from './scenes/timeline/timeline.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,8 @@ import { TimelineComponent } from './scenes/timeline/timeline.component';
     LoginComponent,
     TimelineComponent
   ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot([])
-  ],
-  providers: [StateService],
-  bootstrap: [AppComponent]
+  imports: [ReactiveFormsModule, HttpClientModule, BrowserModule, AppRoutingModule, RouterModule.forRoot([])],
+  providers: [authInterceptorProviders, StateService],
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
