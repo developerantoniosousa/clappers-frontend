@@ -42,7 +42,7 @@ export class ApiService {
     }
 
     return this.http.get<any[]>(
-      `${environment.API_URL}/users${queryString}`
+      `${environment.API_URL}/collaborators${queryString}`
       );
   }
 

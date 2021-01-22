@@ -11,6 +11,8 @@ import { SendClapsCategoryComponent } from './scenes/send-claps-category/send-cl
 import { SendClapsAmountComponent } from './scenes/send-claps-amount/send-claps-amount.component';
 import { LoginComponent } from './scenes/login/login.component';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -19,16 +21,10 @@ import { AppComponent } from './app.component';
     SendClapsTeamComponent,
     SendClapsCategoryComponent,
     SendClapsAmountComponent,
-    LoginComponent
+    LoginComponent,
   ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot([])
-  ],
-  providers: [StateService],
-  bootstrap: [AppComponent]
+  imports: [ReactiveFormsModule, HttpClientModule, BrowserModule, AppRoutingModule, RouterModule.forRoot([])],
+  providers: [authInterceptorProviders, StateService],
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}
