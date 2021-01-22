@@ -8,6 +8,8 @@ const { SpecReporter, StacktraceOption } = require('jasmine-spec-reporter');
  * @type { import("protractor").Config }
  */
 exports.config = {
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  baseUrl: 'http://localhost:4200/',
   allScriptsTimeout: 11000,
   specs: [
     './src/**/*.e2e-spec.ts'
@@ -16,7 +18,6 @@ exports.config = {
     browserName: 'chrome'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
@@ -29,7 +30,10 @@ exports.config = {
     });
     jasmine.getEnv().addReporter(new SpecReporter({
       spec: {
-        displayStacktrace: StacktraceOption.PRETTY
+        displayStacktrace: StacktraceOption.PRETTY,
+        displayDuration:true,
+        displayErrorMessages:true,
+        displayFailed:true,
       }
     }));
   }
