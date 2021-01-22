@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StateService } from '../../services/state.service';
 import { ApiService } from '../../services/api.service';
-import { User } from '../../models/app.model';
+import { User, Recognition } from '../../models/app.model';
 
 @Component({
   selector: 'app-send-claps-amount',
@@ -60,21 +60,21 @@ export class SendClapsAmountComponent implements OnInit {
   public sendClap(): void {
     this.isLoading = true;
 
-    const clapPayload = {
-      amount: this.clapsGiven,
-      userId: this.currentUser._id,
-      category: this.category
+    const clapPayload: Recognition = {
+      claps: this.clapsGiven,
+      receiver_id: this.currentUser.user,
+      category_type: this.category
     };
 
     this.isLoading = false;
     this.success = true;
 
-    // this.api.sendClap(clapPayload).toPromise().then(res => {
-    //   this.isLoading = false;
-    //   this.success = true;
-    // }).catch(e => {
-    //   console.error(e);
-    // });
+    this.api.sendClap(clapPayload).toPromise().then(res => {
+      this.isLoading = false;
+      this.success = true;
+    }).catch(e => {
+      console.error(e);
+    });
 
   }
 

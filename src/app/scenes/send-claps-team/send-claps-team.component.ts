@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { of, fromEvent } from 'rxjs';
+import { fromEvent } from 'rxjs';
 import { debounceTime, map, distinctUntilChanged, filter } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { StateService } from '../../services/state.service';
@@ -36,7 +36,7 @@ export class SendClapsTeamComponent implements OnInit {
 
       this.api.getUsers(text).subscribe((response) => {
         this.isSearching = false;
-        this.team = response;
+        this.team = response.docs;
       }, (err) => {
         this.isSearching = false;
         console.error(err);
@@ -45,7 +45,8 @@ export class SendClapsTeamComponent implements OnInit {
   }
 
   async loadTeam(): Promise<void> {
-      this.team = await this.api.getUsers().toPromise();
+      const team = await this.api.getUsers().toPromise();
+      this.team = team.docs;
       this.isLoading = false;
   }
 

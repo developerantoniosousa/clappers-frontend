@@ -48,7 +48,7 @@ export class ApiService {
 
   sendClap(clapPayload: object): Observable<void> {
     return this.http.post<void>(
-      `${environment.API_URL}/sendClap`, clapPayload
+      `${environment.API_URL}/recognitions`, clapPayload
       );
   }
 }
