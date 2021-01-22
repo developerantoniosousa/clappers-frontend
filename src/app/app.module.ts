@@ -8,21 +8,24 @@ import { RouterModule } from '@angular/router';
 import { SendClapsComponent } from './scenes/send-claps/send-claps.component';
 import { LoginComponent } from './scenes/login/login.component';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SendClapsComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([])
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 

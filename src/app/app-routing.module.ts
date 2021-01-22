@@ -5,7 +5,7 @@ import { SendClapsComponent } from './scenes/send-claps/send-claps.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'send-claps', component: SendClapsComponent },
