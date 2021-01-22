@@ -16,7 +16,7 @@ export class AppComponent {
     router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
-        const noShowBarURLs = ['/', '/home'];
+        const noShowBarURLs = ['/', '/home', '/login'];
         this.showHeader = !noShowBarURLs.some(match => match === this.currentRoute);
       }
     });

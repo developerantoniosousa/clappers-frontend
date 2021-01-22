@@ -1,25 +1,24 @@
 <div class="login">
   <div class="wrapper">
+      <div class="container">
+        <img class="right-person" src="assets/icons/claps-logo-01.svg" />
+        <img class="clap" src="assets/icons/claps-logo-02.svg" />
+        <img class="left-person" src="assets/icons/claps-logo-03.svg" />
+    </div>
+    <div class="logo">CLAPS</div>
     <form [formGroup]="form">
-      <fieldset>
-        <legend>Login</legend>
         <div class="form-field">
-          <label>Usuário:</label>
+          <label>usuário</label>
           <input name="username" formControlName="username" />
         </div>
         <div class="form-field">
-          <label>Senha:</label>
+          <label>senha</label>
           <input name="password" formControlName="password" type="password" />
         </div>
-      </fieldset>
+        <p class="password-error">{{ errorMessage }}</p>
       <div class="form-buttons">
         <button class="button button-primary" (click)="login()">Login</button>
       </div>
     </form>
-    <div>
-      <p>
-        {{ errorMessage }}
-      </p>
-    </div>
   </div>
 </div>
