@@ -21,6 +21,11 @@
     background-repeat: no-repeat;
   }
 
+  &__clap-received {
+    background: #ffffc7;
+    border-radius: 10px;
+  }
+
   .date {
     color: #f6838d;
     padding: 0 1rem;

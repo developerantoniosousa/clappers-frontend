@@ -20,7 +20,6 @@ export class TimelineComponent implements OnInit {
 
   async loadTimeline(): Promise<void> {
     this.timeline = await this.api.getTimeline().toPromise();
-    console.log(this.timeline);
     this.isLoading = false;
   }
 }
