@@ -3,7 +3,7 @@ import { ApiService } from '../../services/api.service';
 import { Event } from '../../models/app.model';
 
 @Component({
-  selector: 'timeline',
+  selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss'],
 })

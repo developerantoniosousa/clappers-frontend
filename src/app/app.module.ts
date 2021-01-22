@@ -14,6 +14,8 @@ import { AppComponent } from './app.component';
 import { TimelineComponent } from './scenes/timeline/timeline.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { DateTimePipe } from './pipes/datetime.pipe';
+import { CategoryPipe } from './pipes/category.pipe';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,11 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     SendClapsCategoryComponent,
     SendClapsAmountComponent,
     LoginComponent,
-    TimelineComponent
+    TimelineComponent,
+    DateTimePipe,
+    CategoryPipe
   ],
+  exports: [DateTimePipe, CategoryPipe],
   imports: [ReactiveFormsModule, HttpClientModule, BrowserModule, AppRoutingModule, RouterModule.forRoot([])],
   providers: [authInterceptorProviders, StateService],
   bootstrap: [AppComponent],

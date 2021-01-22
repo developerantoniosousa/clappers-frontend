@@ -11,6 +11,10 @@ type Category =
 
 type EventType = 'clap-received' | 'clap-sent' | 'start-time-cycle' | 'achievement-badge';
 
+interface NewCycleContent {
+  claps: number;
+}
+
 interface ClapReceivedContent {
   claps: number;
   category_type: Category;
@@ -62,9 +66,11 @@ export interface Dashboard {
 }
 
 export interface Event {
-  content?: ClapReceivedContent | ClapSentContent | AchievementContent;
+  content?: ClapReceivedContent | ClapSentContent | AchievementContent | NewCycleContent;
   available_claps: number;
   badges: Badge[];
   type: EventType;
   date: string;
+  createdAt: Date;
+  updatedAt: Date;
 }

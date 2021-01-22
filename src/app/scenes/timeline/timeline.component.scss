@@ -1,0 +1,43 @@
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #585858;
+  padding: 1rem;
+  margin: 1rem;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  .qtde {
+    min-width: 75px;
+    width: 75px;
+    height: 75px;
+    background-image: url(/assets/icons/051-numbers.svg);
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+  }
+
+  .date {
+    color: #f6838d;
+    padding: 0 1rem;
+  }
+  .text {
+    padding: 0 1rem;
+    color: #585858;
+  }
+  .achievement {
+      min-width: 75px;
+      width: 75px;
+      height: 75px;
+      background-image: url(/assets/icons/026-development.svg);
+      background-size: contain;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-repeat: no-repeat;
+    }
+}

@@ -36,7 +36,7 @@ export class SendClapsTeamComponent implements OnInit {
 
       this.api.getUsers(text).subscribe((response) => {
         this.isSearching = false;
-        this.team = response.docs;
+        this.team = response;
       }, (err) => {
         this.isSearching = false;
         console.error(err);
@@ -46,7 +46,7 @@ export class SendClapsTeamComponent implements OnInit {
 
   async loadTeam(): Promise<void> {
       const team = await this.api.getUsers().toPromise();
-      this.team = team.docs;
+      this.team = team;
       this.isLoading = false;
   }
 
