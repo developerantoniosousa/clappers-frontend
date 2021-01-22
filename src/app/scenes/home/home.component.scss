@@ -22,10 +22,36 @@
     background-size: cover;
     background-image:url(/assets/icons/051-numbers.svg);
     text-align: center;
-    &__to-share{
-      
+    
+    .desc{
+      position: absolute;
+      text-align: center;
+      width: 135px;
+      font-size: 12pt;
+      bottom: -27px;
+      color: #f6838d;
     }
+
+    &__to-share{
+      position: relative;
+      .to-give-claps{
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        top: -21px;
+        left: 45px;
+      }
+    }
+
     &__shared_with_me{
+      position: relative;
+      .my-claps{
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
     }
   }
 }
@@ -69,3 +95,4 @@
     font-size: 18pt;
   }
 }
+
