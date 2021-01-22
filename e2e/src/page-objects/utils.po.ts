@@ -2,9 +2,12 @@ import { browser, by, element, ElementFinder, protractor } from 'protractor';
 
 export class UtilsPage {
 readonly TIMEOUT_DEFAULT = 15000;
-  
-  navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
+
+  async navigateTo() {
+    await browser.waitForAngularEnabled(false);
+    browser.driver.manage().window().maximize();
+    console.log("navigateToOk");
+    return await browser.get(browser.baseUrl);
   }
 
   login(user: string, password: string) {
@@ -14,7 +17,7 @@ readonly TIMEOUT_DEFAULT = 15000;
     element(by.css('.form-field [name="password"]')).sendKeys(password);
     element(by.buttonText('Login')).click();
 
-    this.urlContains('applications', 25000);
+    this.urlContains('home', 25000);
     expect(browser.getCurrentUrl()).toContain(browser.baseUrl);
   }
 
