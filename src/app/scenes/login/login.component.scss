@@ -1,0 +1,17 @@
+@import '_theme';
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 50vw;
+  height: 50vh;
+  max-width: 300px;
+}
+
+div {
+  margin: 10px;
+}

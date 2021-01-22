@@ -1,16 +1,25 @@
-<form [formGroup]="form">
-  <fieldset>
-    <legend>Login</legend>
-    <div class="form-field">
-      <label>Usuário:</label>
-      <input name="username" formControlName="username" />
+<div class="login">
+  <div class="wrapper">
+    <form [formGroup]="form">
+      <fieldset>
+        <legend>Login</legend>
+        <div class="form-field">
+          <label>Usuário:</label>
+          <input name="username" formControlName="username" />
+        </div>
+        <div class="form-field">
+          <label>Senha:</label>
+          <input name="password" formControlName="password" type="password" />
+        </div>
+      </fieldset>
+      <div class="form-buttons">
+        <button class="button button-primary" (click)="login()">Login</button>
+      </div>
+    </form>
+    <div>
+      <p>
+        {{ errorMessage }}
+      </p>
     </div>
-    <div class="form-field">
-      <label>Senha:</label>
-      <input name="password" formControlName="password" type="password" />
-    </div>
-  </fieldset>
-  <div class="form-buttons">
-    <button class="button button-primary" (click)="login()">Login</button>
   </div>
-</form>
+</div>
